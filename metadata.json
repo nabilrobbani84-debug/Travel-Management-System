@@ -1,0 +1,8 @@
+{
+  "name": "Travel Management System",
+  "description": "Enterprise-grade Travel Management System featuring customer booking portal, quota concurrency management, payment gateway integration, staff & admin operations dashboard, and interactive OpenAPI documentation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
