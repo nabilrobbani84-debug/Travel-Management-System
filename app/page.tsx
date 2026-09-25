@@ -185,7 +185,7 @@ export default function TravelManagementApp() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-100/70 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+    <div suppressHydrationWarning className="min-h-screen bg-slate-100/70 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
       {/* Top Header Navbar */}
       <Navbar
         currentRole={currentUser.role}
