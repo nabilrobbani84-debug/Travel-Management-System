@@ -8,26 +8,26 @@ export function ArchitectureViewer() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+      {/* Header Cockpit */}
+      <div className="bg-slate-900 text-white p-6 rounded-3xl border border-slate-800 shadow-xl flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 glow-purple">
         <div>
-          <div className="flex items-center gap-2">
-            <span className="p-1.5 rounded-lg bg-indigo-100 text-indigo-700">
-              <Database className="w-4 h-4" />
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
+              <Database className="w-5 h-5" />
             </span>
-            <h2 className="text-base font-extrabold text-slate-900">
+            <h2 className="text-lg font-black tracking-tight text-white">
               System Architecture & Relational ERD
             </h2>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
+            <span className="text-[10px] font-extrabold px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 backdrop-blur-md">
               PostgreSQL 16 + Redis 7 + Clean Arch
             </span>
           </div>
-          <p className="text-xs text-slate-500 mt-1">
+          <p className="text-xs text-slate-400 mt-1.5 max-w-2xl leading-relaxed">
             Visualisasi skema database terenkapsulasi, pemisahan dependensi Clean Architecture, dan alur mutex locking untuk mitigasi race-condition.
           </p>
         </div>
 
-        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+        <div className="flex flex-wrap items-center gap-1.5 bg-slate-800/90 p-1.5 rounded-2xl border border-slate-700/80 backdrop-blur-md">
           {[
             { id: 'ERD', label: 'Relational ERD' },
             { id: 'CONCURRENCY', label: 'Concurrency Mutex' },
@@ -37,10 +37,10 @@ export function ArchitectureViewer() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
                 activeTab === tab.id
-                  ? 'bg-white text-indigo-700 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900'
+                  ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-lg glow-blue scale-102'
+                  : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
               }`}
             >
               {tab.label}

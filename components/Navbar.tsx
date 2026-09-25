@@ -57,76 +57,76 @@ export function Navbar({
   const unreadNotifs = notifications.filter((n) => !n.isRead);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200/60 bg-white/80 backdrop-blur-xl shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-2">
           {/* Logo & Platform Name */}
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-              <Compass className="w-5 h-5 animate-pulse" />
+          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => onSelectTab('MARKETPLACE')}>
+            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-700 via-indigo-600 to-sky-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform duration-300">
+              <Compass className="w-5 h-5 animate-pulse text-white" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-base sm:text-lg tracking-tight text-slate-900">
+                <span className="font-black text-base sm:text-lg tracking-tight text-slate-900">
                   Nusantara<span className="text-blue-600">Travel</span>
                 </span>
-                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                <span className="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-extrabold bg-blue-50 text-blue-700 border border-blue-200 shadow-2xs">
                   Enterprise TMS v1.0
                 </span>
               </div>
-              <div className="text-[11px] text-slate-500 hidden sm:block">
+              <div className="text-[11px] text-slate-500 font-medium hidden sm:block">
                 Advanced Backend & Concurrency Engine
               </div>
             </div>
           </div>
 
           {/* Navigation Tabs */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-100/80 p-1 rounded-xl border border-slate-200/60">
+          <nav className="hidden md:flex items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80 backdrop-blur-md shadow-inner">
             <button
               onClick={() => onSelectTab('MARKETPLACE')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
                 activeTab === 'MARKETPLACE'
-                  ? 'bg-white text-blue-700 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
+                  ? 'bg-white text-blue-700 shadow-md glow-blue scale-102'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
               }`}
             >
-              <Compass className="w-4 h-4" />
+              <Compass className="w-4 h-4 text-blue-600" />
               <span>{lang === 'id' ? 'Eksplor & Booking' : 'Marketplace'}</span>
             </button>
 
             <button
               onClick={() => onSelectTab('OPERATIONS')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
                 activeTab === 'OPERATIONS'
-                  ? 'bg-white text-blue-700 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
+                  ? 'bg-white text-blue-700 shadow-md glow-blue scale-102'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
               }`}
             >
-              <LayoutDashboard className="w-4 h-4" />
+              <LayoutDashboard className="w-4 h-4 text-indigo-600" />
               <span>{lang === 'id' ? 'Dashboard Operasional' : 'Operations Desk'}</span>
             </button>
 
             <button
               onClick={() => onSelectTab('API_DOCS')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
                 activeTab === 'API_DOCS'
-                  ? 'bg-white text-blue-700 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
+                  ? 'bg-white text-blue-700 shadow-md glow-blue scale-102'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
               }`}
             >
-              <Code2 className="w-4 h-4" />
+              <Code2 className="w-4 h-4 text-emerald-600" />
               <span>OpenAPI / Swagger</span>
             </button>
 
             <button
               onClick={() => onSelectTab('ARCHITECTURE')}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold transition ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
                 activeTab === 'ARCHITECTURE'
-                  ? 'bg-white text-blue-700 shadow-xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
+                  ? 'bg-white text-blue-700 shadow-md glow-blue scale-102'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
               }`}
             >
-              <Database className="w-4 h-4" />
+              <Database className="w-4 h-4 text-purple-600" />
               <span>Architecture & ERD</span>
             </button>
           </nav>
