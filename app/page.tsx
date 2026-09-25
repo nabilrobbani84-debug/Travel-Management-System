@@ -47,6 +47,12 @@ export default function TravelManagementApp() {
   const [currency, setCurrency] = useState<CurrencyCode>('IDR');
   const [lang, setLang] = useState<'id' | 'en'>('id');
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   // Active Invoice View Modal
   const [activeInvoice, setActiveInvoice] = useState<Invoice | null>(null);
 
@@ -63,7 +69,7 @@ export default function TravelManagementApp() {
     setNotifications(travelStore.getNotifications());
   };
 
-  if (!currentUser) {
+  if (!isMounted || !currentUser) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center text-white">
         <div className="flex flex-col items-center gap-3">
